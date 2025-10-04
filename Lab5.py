@@ -5,15 +5,31 @@
 # *   *
 # *****
 def hollow_square(n):
-    #empty_space = "*" + "" + (n-2) + "" + "*" /n 
-
-   ''' n = 5
+    if n <= 0:
+        return ""
+    if n == 1:
+        return "*"
+ 
     i = 0
-    while i = n:
-        return n * ""
-    elif i == 0 or i == 1
-            return "*" + " " + "n-2" + " "
-            '''
+    result = ""
+ 
+    while i < n:
+        if i == 0 or i == n - 1:        # top or bottom row
+            line = "*" * n
+        else:                           # middle rows
+            line = "*" + " " * (n - 2) + "*"
+ 
+        result += line
+        if i < n - 1:                   # add newline except for the last row
+            result += "\n"
+        i += 1
+ 
+    return result
+ 
+print(hollow_square(5))
+ 
+ 
+ 
 
 
         
@@ -74,5 +90,39 @@ def sum_of_natural_numbers(n):
 #   ***
 #  *****
 # *******
+
 def centered_star_pyramid(n):
-    return ""
+  
+   
+   
+    pyramid = ""
+    i = 1
+    width = 2 * n -1
+
+    while i <= n:
+        stars = "*" * (2 * i - 1)
+        pyramid += stars.center(width) .rstrip()
+        if i != n:
+            pyramid += "\n"
+    
+        i += 1
+    return pyramid
+print(centered_star_pyramid(4))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
